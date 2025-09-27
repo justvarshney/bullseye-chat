@@ -25,9 +25,9 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="h-screen bg-background flex overflow-hidden">
       {/* Parameter Panel */}
-      <div className={`${showParams ? 'w-80' : 'w-0'} transition-all duration-300 overflow-hidden border-r border-border`}>
+      <div className={`${showParams ? 'w-80' : 'w-0'} transition-all duration-300 overflow-hidden border-r border-border flex-shrink-0`}>
         <ParameterPanel 
           parameters={parameters}
           onParametersChange={setParameters}
@@ -35,9 +35,9 @@ const Index = () => {
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="glass border-b border-border/50 p-4 flex items-center justify-between">
+        <header className="glass border-b border-border/50 p-4 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
@@ -60,7 +60,7 @@ const Index = () => {
         </header>
 
         {/* Chat Interface */}
-        <div className="flex-1">
+        <div className="flex-1 min-h-0">
           <ChatInterface parameters={parameters} />
         </div>
       </div>
